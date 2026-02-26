@@ -29,18 +29,15 @@ public class UsuarioDAOArchivo {
 
     
     
-    public void listar() throws IOException {
+   public void listar() throws IOException {
 
-        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+    try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+        
+        System.out.println("LISTA DE USUARIOS REGISTRADOS EN datos.txt");
+        String linea;
 
-            String linea1 = br.readLine();
-            if (linea1 != null) {
-                System.out.println(linea1);
-            }
-
-            String linea2 = br.readLine();
-            if (linea2 != null) {
-                System.out.println(linea2);
+        while ((linea = br.readLine()) != null) {
+            System.out.println(linea);
             }
         }
     }
